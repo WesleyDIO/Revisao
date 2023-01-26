@@ -21,14 +21,22 @@ public class horario {
       }
 	
 	public static int periodos (int hora, int minuto) {
-	    if(0 < hora && hora <= 12) {
-	    	hora+=12;
-	    	System.out.println("A hora convertida ficará: "+hora+":"+minuto+" P ");
-	    }else if( 12 < hora && hora <= 24) {
-	    	hora-=12;
+	    if(0 < hora && hora < 12) {
+	    	
 	    	System.out.println("A hora convertida ficará: "+hora+":"+minuto+" A ");
+	    }else if( 12 < hora) {
+	    	hora-=12;
+	    	System.out.println("A hora convertida ficará: "+hora+":"+minuto+" P ");
+	    }
+	    else if(hora == 00) {
+	    	hora+=12;
+	    	System.out.println("A hora convertida ficará: "+hora+":"+minuto+" A ");
+	    }
+	    else if(hora == 12) {
+	    	System.out.println("A hora convertida ficará: "+hora+":"+minuto+" P ");
 	    }
 	     return hora;
 	}
 
 }
+
